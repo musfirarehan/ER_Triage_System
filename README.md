@@ -18,11 +18,11 @@ Quick demo: `./triage < tests/demo_input.txt`  (a ready-made data file is in `sa
 ## Design
 | Module | File | Structure | Owner |
 |---|---|---|---|
-| 1 Priority queue | `include/MinHeap.h` | Binary min-heap of `Patient*`; each patient stores its `heapIndex`; auto-grows | Member 1 |
-| 2 Patient lookup | `include/HashTable.h` | Hash table, separate chaining, rehash at load > 0.75, rejects duplicate IDs; owns the `Patient` objects | Member 2 |
-| 3 History / storage / UI | `HistoryList.h`, `Storage.h`, `TriageSystem.h`, `src/main.cpp` | Doubly linked list, file I/O with checksum, controller, menu | Member 3 |
+| 1 Priority queue | `include/MinHeap.h` | Binary min-heap of `Patient*`; each patient stores its `heapIndex`; auto-grows | Hooria Ali |
+| 2 Patient lookup | `include/HashTable.h` | Hash table, separate chaining, rehash at load > 0.75, rejects duplicate IDs; owns the `Patient` objects | Musfira Rehan |
+| 3 History / UI | `HistoryList.h`, `TriageSystem.h` | Doubly linked list, file I/O with checksum, controller| Insiya Murad|
 
-Shared: `Patient.h` (record types), `Validation.h` (input checks).
+Shared: `Patient.h` (record types), `Validation.h` (input checks), Storage.h, main.cpp
 
 Each waiting patient is stored **once** (in the hash table); the heap holds pointers to the same object.
 
